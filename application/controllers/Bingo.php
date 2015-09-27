@@ -7,25 +7,37 @@
  */
 
 /**
- * Description of Last
+ * Description of Bingo
  *
  * @author Evanna
  */
-class Last extends Application{
+class Bingo extends Application{
     //put your code here
     
     function __construct() {
         parent::__construct();
     }
     
-     function index() {
+    function index(){    
         $this->data['pagebody'] = 'justone';
-        $source = $this->quotes->last();
+        $source = $this->quotes->get(5);
      
         $this->data['who'] = $source['who'];
         $this->data['mug'] = $source['mug'];
         $this->data['what'] = $source['what'];
 
-        $this->render();      
+        $this->render(); 
+    }
+    
+    function wisdom(){    
+        $this->data['pagebody'] = 'justone';
+        $source = $this->quotes->get(6);
+     
+        $this->data['who'] = $source['who'];
+        $this->data['mug'] = $source['mug'];
+        $this->data['what'] = $source['what'];
+
+        $this->render(); 
+        
     }
 }
