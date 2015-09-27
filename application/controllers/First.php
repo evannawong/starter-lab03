@@ -26,4 +26,26 @@ class First extends Application{
 
         $this->render();      
     }
+    
+    function zzz(){
+        $this->data['pagebody'] = 'justone';
+        $source = $this->quotes->get(1);
+     
+        $this->data['who'] = $source['who'];
+        $this->data['mug'] = $source['mug'];
+        $this->data['what'] = $source['what'];
+
+        $this->render(); 
+    }
+    
+    function gimme($digit){
+        $this->data['pagebody'] = 'justone';
+        $source = $this->quotes->get($digit);
+     
+        $this->data['who'] = $source['who'];
+        $this->data['mug'] = $source['mug'];
+        $this->data['what'] = $source['what'];
+
+        $this->render(); 
+    }
 }
